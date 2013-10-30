@@ -1,8 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+﻿
 <title>Browse Members by Country | LinkedIn</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="images/favicon.ico" />
@@ -11,8 +7,8 @@
 <body id="join">
 	<div class="top-menu">
 		<div class="wrapper">
-			<a class="logo-black">LinkedIn</a>
-			<div class="top-menu-right-link">Already on LinkedIn? <a href="https://www.linkedin.com/uas/login">Sign in</a></div>
+			<a href="default_page.html" class="logo-black">LinkedIn</a>
+			<div class="top-menu-right-link">Already on LinkedIn? <a href="<?php echo base_url('index.php/login/login/doLogin');?>">Sign in</a></div>
 		</div>
 	</div>
 	<div class="wrapper">
@@ -23,7 +19,7 @@
 				</div>
 				<div id="content">
 					<div class="register-container">
-						<form id="yui-gen2" class="standard-form sided">
+						<form id="yui-gen2" class="standard-form sided" action="<?php echo base_url('index.php/signup/signup/signuping');?>"  onsubmit="return validateForm()" method="post">
 							<ul>
 								<li class="name">
 									<label for="firstName-coldRegistrationForm">First Name:</label>
@@ -68,12 +64,12 @@
 					<div id="extra">
 						<div class="sign-in-with">
 							<p class="handwritten">Save time by using your Facebook account to sign up for LinkedIn.</p>
-							<p><a href="#" class="fb_button"><span class="fb_button_text">Sign up with Facebook</span></a></p>
+							<p><a href="default_page.html" class="fb_button"><span class="fb_button_text">Sign up with Facebook</span></a></p>
 						</div>
 					</div>
 				</div>
 				<p id="agreement">
-				 * By joining LinkedIn, you agree to LinkedIn's <a href="#" target="_blank">User Agreement</a>, <a href="#" target="_blank">Privacy Policy</a> and <a href="#" target="_blank">Cookie Policy</a>
+				 * By joining LinkedIn, you agree to LinkedIn's <a href="default_page.html" target="_blank">User Agreement</a>, <a href="default_page.html" target="_blank">Privacy Policy</a> and <a href="default_page.html" target="_blank">Cookie Policy</a>
 				</p>			
 			</div>
 		
@@ -89,5 +85,51 @@
 		</div>
 	</div> <!-- END: FOOTER -->
 </body>
+<script type="text/javascript">
 
+function validateForm()
+{
+var theemail=document.forms["yui-gen2"]["email-coldRegistrationForm"].value;
+var thepass=document.forms["yui-gen2"]["password-coldRegistrationForm"].value; 
+var thefname=document.forms["yui-gen2"]["firstName-coldRegistrationForm"].value;
+var thelname=document.forms["yui-gen2"]["lastName-coldRegistrationForm"].value;
+var fnameerror = document.getElementById('firstName-coldRegistrationForm-error')
+var lnameerror = document.getElementById('lastName-coldRegistrationForm-error')
+var passworderror = document.getElementById('password-coldRegistrationForm-error')
+var emailerror = document.getElementById('email-coldRegistrationForm-error')
+
+
+
+	if(thefname == "" || thefname == null)
+	{
+		fnameerror.innerHTML = 'First name cannot be empty'
+		return false;
+	}
+	else
+		fnameerror.innerHTML = ''
+	if(thelname == "" || thelname == null)
+	{
+		lnameerror.innerHTML = 'Last name cannot be empty'
+		return false;
+	}
+	else
+		lnameerror.innerHTML = ''
+	if(theemail == "" || theemail == null || theemail.length <= 3)
+	{
+		emailerror.innerHTML = 'The text you provided is too short.'
+		return false;
+	}
+	else
+		emailerror.innerHTML = ''
+	if(thepass.length < 6 || thepass == null || thepass == '')
+	{
+		passworderror.innerHTML = 'The password you provided must have at least 6 characters.'
+		return false;
+
+	}	
+	else
+		passworderror.innerHTML = ''
+}
+
+</script>
 </html>

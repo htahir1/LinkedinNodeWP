@@ -9,6 +9,7 @@
     <?php// echo link_css('bootstrap'); ?>
     <?php echo link_css('style') ?>
 <link href="<?php echo base_url(); ?>assets/css/style.css" >
+<link href="<?php echo base_url(); ?>assets/css/inside-linkedin.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript">
 $( "#login" ).submit(function( event ) {
@@ -62,4 +63,4 @@ u[o]&&(delete u[o],c?delete n[l]:typeof n.removeAttribute!==i?n.removeAttribute(
     <script src="assets/js/jquery.form.js"></script>
   -->
  
- </head>
+ 

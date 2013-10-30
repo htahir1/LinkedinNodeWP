@@ -1,10 +1,6 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
+﻿
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <title>What is LinkedIn? | LinkedIn</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 
@@ -12,11 +8,11 @@
 	<div class="top">
 	
 		<div class="wrapper">
-			<a class="logo">LinkedIn</a>
+			<a href="default_page.html" class="logo">LinkedIn</a>
 			<ul class="top-navigation">
-			<li><a href="#">What is LinkedIn?</a></li>
-			<li><a href="#">Join Today</a></li>
-			<li><a href="#">Sign In</a></li>
+			<li><a href="<?php echo base_url('index.php/login/login/what');?>">What is LinkedIn?</a></li>
+			<li><a href="<?php echo base_url('index.php/signup/signup');?>">Join Today</a></li>
+			<li><a href="<?php echo base_url('index.php/login/login/doLogin');?>">Sign In</a></li>
 			</ul>
 		</div>
 	</div>
@@ -68,38 +64,38 @@
 		
 	<div class="footer">
 		<ul class="footer-links">
-			<li class="bold"><a href="#"><strong>Help Center</strong></a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Press</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="#">Careers</a></li>
-			<li><a href="#">Advertising</a></li>
-			<li><a href="#">Talent Solutions</a></li>
-			<li><a href="#">Tools</a></li>
-			<li><a href="#">Mobile</a></li>
-			<li><a href="#">Developers</a></li>
-			<li><a href="#">Publishers</a></li>
-			<li><a href="#">Language</a></li>
-			<li><a href="#">Slideshare</a></li>
+			<li class="bold"><a href="default_page.html"><strong>Help Center</strong></a></li>
+			<li><a href="default_page.html">About</a></li>
+			<li><a href="default_page.html">Press</a></li>
+			<li><a href="default_page.html">Blog</a></li>
+			<li><a href="default_page.html">Careers</a></li>
+			<li><a href="default_page.html">Advertising</a></li>
+			<li><a href="default_page.html">Talent Solutions</a></li>
+			<li><a href="default_page.html">Tools</a></li>
+			<li><a href="default_page.html">Mobile</a></li>
+			<li><a href="default_page.html">Developers</a></li>
+			<li><a href="default_page.html">Publishers</a></li>
+			<li><a href="default_page.html">Language</a></li>
+			<li><a href="default_page.html">Slideshare</a></li>
 		</ul>
 		<div class="clear"></div>
 		<ul class="footer-links">
-			<li><a href="#">LinkedIn Updates</a></li>
-			<li><a href="#">LinkedIn Influencers </a></li>
-			<li><a href="#">LinkedIn Jobs </a></li>
-			<li><a href="#">Jobs Directory </a></li>
-			<li><a href="#">Company Directory </a></li>
-			<li><a href="#">Groups Directory </a></li>
-			<li><a href="#">Title Directory </a></li>
+			<li><a href="default_page.html">LinkedIn Updates</a></li>
+			<li><a href="default_page.html">LinkedIn Influencers </a></li>
+			<li><a href="default_page.html">LinkedIn Jobs </a></li>
+			<li><a href="default_page.html">Jobs Directory </a></li>
+			<li><a href="default_page.html">Company Directory </a></li>
+			<li><a href="default_page.html">Groups Directory </a></li>
+			<li><a href="default_page.html">Title Directory </a></li>
 		</ul>
 		<div class="clear"></div>
 		<ul class="footer-links">
 			<li><img src="images/logo-footer.png" alt="Footer Logo" /></li>
-			<li><a href="#">User Agreement </a></li>
-			<li><a href="#">Privacy Policy </a></li>
-			<li><a href="#">Community Guidelines </a></li>
-			<li><a href="#">Cookie Policy </a></li>
-			<li><a href="#">Copyright Policy </a></li>
+			<li><a href="default_page.html">User Agreement </a></li>
+			<li><a href="default_page.html">Privacy Policy </a></li>
+			<li><a href="default_page.html">Community Guidelines </a></li>
+			<li><a href="default_page.html">Cookie Policy </a></li>
+			<li><a href="default_page.html">Copyright Policy </a></li>
 		</ul>
 	</div> <!-- END: FOOTER -->
 </body>

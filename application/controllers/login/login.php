@@ -15,17 +15,56 @@ class Login extends CI_Controller{
 		$this->load->helper('url');
 
 		if($this->session->userdata('username')){
-			redirect('myview/screen-1.php', 'refresh');
+			redirect('search/search', 'refresh');
+		}else{
+			$data['msg'] = $msg;
+			$data['heading'] = "Login";
+			$this->load->view('common/header',$data);
+			$this->load->view('myview/default_main_page.php',$data);
+		}
+		//$this->load->view('common/footer',$data);
+	}
+	public function loggedin(){
+		if($this->session->userdata('username')){
+			redirect('search/search', 'refresh');
+			
 		}else{
 			$data['msg'] = $msg;
 			$data['heading'] = "Login";
 			$this->load->view('common/header',$data);
 			//$this->load->view('loginView/login_view', $data)
-			$this->load->view('myview/screen-5.php',$data);
+			$this->load->view('myview/default_main_page.php',$data);
 		}
-		//$this->load->view('common/footer',$data);
+
+
+
 	}
 	
+	public function doLogin($msg = NULL){
+
+		$this->load->helper('url');
+
+		if($this->session->userdata('username')){
+			redirect('search/search', 'refresh');
+		}else{
+			$data['msg'] = $msg;
+			$data['heading'] = "Login";
+			$this->load->view('common/header',$data);
+			//$this->load->view('loginView/login_view', $data)
+			$this->load->view('myview/loginScreen.php',$data);
+		}
+
+
+
+	}
+	public function what(){
+	$this->load->view('common/header');
+		$this->load->view('myview/screen-3.php');
+
+
+
+	}
+
 	public function process(){
 		// Load the model
 		$this->load->model('login_model');
@@ -35,16 +74,22 @@ class Login extends CI_Controller{
 		if(! $result){
 			// If user did not validate, then show them login page again
 			$msg = '<font color=red>Invalid username and/or password.</font><br />';
-			$this->index($msg);
+			$this->doLogin($msg);
 		}else{
 			// If user did validate, 
 			// Send them to members area
-			redirect('myview/screen-1.php','refresh');
+
+if($this->session->userdata('username')){
+			redirect('search/search', 'refresh');
 		}		
 	}
+}
 	public function do_logout(){
 		$this->session->sess_destroy();
 		redirect('login/login','refresh');
 	}
+
+
+
 }
 ?>

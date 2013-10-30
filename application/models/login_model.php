@@ -7,14 +7,27 @@ class Login_model extends CI_Model{
 		parent::__construct();
 	}
 	
-	public function validate(){
+	public function validate($usr=NULL,$pass=NULL){
 		// grab user input
+		if($usr==NULL && $pass==NULL)
+		{
 		$username = $this->security->xss_clean($this->input->post('lEmail'));
 		$password = $this->security->xss_clean($this->input->post('lPassword'));
-		
+		}
+		else{
+			$username=$usr;
+			$password=$pass;
+			$usr=NULL;
+			$pass=NULL;
+
+
+
+		}
+
+
 		// Prep the query
 		$this->db->where('username', $username);
-		$this->db->where('password', $password);
+		//$this->db->where('password', $password);
 		
 		// Run the query
 		$query = $this->db->get('users');

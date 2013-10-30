@@ -30,7 +30,7 @@
 							<label for="session_password-login">Password:</label>
 							<div class="fieldgroup">
 								<input id="session_password-login" type="password" tabindex="2" value="" name="lPassword" />
-								<a class="nav-link password-reminder-link" tracking="signin_fpwd" href="/uas/request-password-reset?session_redirect=&trk=signin_fpwd">Forgot password?</a>
+								<a class="nav-link password-reminder-link" tracking="signin_fpwd" href="<?php echo base_url('forgotpassword.php/ForgetPassword/loadview');?>">Forgot password?</a>
 								<?php if(! is_null($msg)) echo $msg;?>
 							</div>
 						</li>

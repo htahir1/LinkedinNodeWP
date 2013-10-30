@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/web/';
+$config['base_url']	= 'http://localhost/FASTSemester5WPBaseProjectPHP/';
 
 /*
 |--------------------------------------------------------------------------
