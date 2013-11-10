@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background:url(../images/binding_dark.png);
+	background-repeat:repeat;
+	color:#FFF;
+	}
+#t1{
+	 font-size: 20px;
+    font-weight: bold;
+    height: 200px;
+    width: 700px;
+	}
+
+#top{
+	height:200px;
+	
+	
+	
+	
+}
+.btn{
+	 margin-left: 600px;
+    position: absolute;
+	
+	}
+#login{ margin-left: 596px;
+    margin-top: 3px;
+    position: relative
+}
+#signupbtn {
+	 font-size:18px;
+	padding: 5px;
+	margin-left: 12px;
+}
+
+.BoxText{
+	width: 200px;padding: 3px;background: #F3F9DD;
+	
+	
+	}
+	#signUpForm{
+	   margin-left: 883px;
+    margin-top: -211px;
+    position: absolute;		
+		
+	}
+	#s{
+		 font-size: 39px;
+    font-weight: bold;
+		
+		
+	}
+	#sub{
+		background:#CCC;	
+	}
