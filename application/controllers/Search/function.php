@@ -9,7 +9,7 @@ function resize($width, $height){
 	$x = ($w - $width / $ratio) / 2;
 	$w = ceil($width / $ratio);
 	/* new file name */
-	$path = 'uploads/'.$_FILES['image']['name'];
+	$path = 'uploads/'.$height.'_'.$_FILES['image']['name'];
 	/* read binary data from image file */
 	$imgString = file_get_contents($_FILES['image']['tmp_name']);
 	/* create image from string */

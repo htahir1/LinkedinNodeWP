@@ -1,6 +1,78 @@
 ﻿
 <title>Build Your Profile | LinkedIn</title>
 <link rel="shortcut icon" href="images/favicon.ico" />
+<script type="text/javascript">
+
+function func1(){
+document.write("helloworld");
+var s=document.getElementsByName(status-chooser);
+var ee=document.getElementById("changerr");
+if(s=="employed"){
+
+ee.innerHtml='<li class="password-field">
+									<label for="jobtitle-coldRegistrationForm">* Job Title:</label>
+									<div class="fieldgroup">
+										<span id="jobtitle-coldRegistrationForm-error" class="error"></span>
+										<input id="jobtitle-coldRegistrationForm" type="text" value="" name="JobTitle" required/>
+									</div>
+									<p class="note"><label class="labelradio" style="font-size: 11px;"  for="self-employed"><input style="margin-right: 5px;" id="self-employed" type="checkbox" value="I am self-employed" />I am self-employed</label></p>
+								</li>
+								<li class="password-field">
+									<label for="company-coldRegistrationForm">* Company:</label>
+									<div class="fieldgroup">
+										<span id="company-coldRegistrationForm-error" class="error"></span>
+										<input id="company-coldRegistrationForm" type="text" value="" name="company" />
+									</div>
+								</li>';
+
+
+
+
+
+}
+else if (s=="Job_Seeker"){
+ee.innerHtml='<li class="password-field">
+									<label for="jobtitle-coldRegistrationForm">* Most recent job title:</label>
+									<div class="fieldgroup">
+										<span id="jobtitle-coldRegistrationForm-error" class="error"></span>
+										<input id="jobtitle-coldRegistrationForm" type="text" value="" name="JobTitle" required/>
+									</div>
+									<p class="note"><label class="labelradio" style="font-size: 11px;"  for="self-employed"><input style="margin-right: 5px;" id="self-employed" type="checkbox" value="I am self-employed" />I am self-employed</label></p>
+								</li>
+								<li class="password-field">
+									<label for="jobtitle-coldRegistrationForm">* Most recent company:</label>
+									<div class="fieldgroup">
+										<span id="jobtitle-coldRegistrationForm-error" class="error"></span>
+										<input id="jobtitle-coldRegistrationForm" type="text" value="" name="JobTitle" required/>
+									</div>
+								
+								</li>
+								<li class="password-field">
+									<label for="company-coldRegistrationForm">* Company:</label>
+									<div class="fieldgroup">
+										<span id="company-coldRegistrationForm-error" class="error"></span>
+										<input id="company-coldRegistrationForm" type="text" value="" name="company" />
+									</div>
+								</li>';
+
+
+}
+else if(s=="Student"){
+
+
+
+
+}
+
+
+}
+
+
+
+
+</script>
+
+
 </head>
 
 <body id="join">
@@ -164,23 +236,24 @@
 									<label for="postalcode-coldRegistrationForm">Postal Code:</label>
 									<div class="fieldgroup">
 										<span id="postalcode-coldRegistrationForm-error" class="error"></span>
-										<input id="postalcode-coldRegistrationForm" type="text" maxlength="40" value="" name="postalCode" />
+										<input id="postalcode-coldRegistrationForm" type="text" maxlength="40" value="" name="postalCode" required/>
 									</div>
 								</li>
 								<li>
 									<label for="currentjob-coldRegistrationForm">I am currently:</label>
 									<div class="fieldgroup">
 										<span id="currentjob-coldRegistrationForm-error" class="error"></span>
-										<label class="labelradio" for="employed-btn"><input type="radio" id="employed-btn" value="employed" name="status-chooser" checked="checked" defaultchecked="true" />Employed</label>
-										<label class="labelradio" for="looking-btn"><input type="radio" id="looking-btn" value="employed" name="status-chooser" />Job Seeker</label>
-										<label class="labelradio" for="student-btn"><input type="radio" id="student-btn" value="employed" name="status-chooser" />Student</label>										
+										<label class="labelradio" for="employed-btn"><input onchange="func1();" type="radio" id="employed-btn" value="employed" name="status-chooser" checked="checked" defaultchecked="true" />Employed</label>
+										<label class="labelradio" for="looking-btn"><input onchange="func1();" type="radio" id="looking-btn" value="Job_Seeker" name="status-chooser" />Job Seeker</label>
+										<label class="labelradio" for="student-btn"><input onchange="func1();" type="radio" id="student-btn" value="Student" name="status-chooser" />Student</label>										
 									</div>
 								</li>
+								<div id="changerr">
 								<li class="password-field">
 									<label for="jobtitle-coldRegistrationForm">* Job Title:</label>
 									<div class="fieldgroup">
 										<span id="jobtitle-coldRegistrationForm-error" class="error"></span>
-										<input id="jobtitle-coldRegistrationForm" type="text" value="" name="text" />
+										<input id="jobtitle-coldRegistrationForm" type="text" value="" name="JobTitle" required/>
 									</div>
 									<p class="note"><label class="labelradio" style="font-size: 11px;"  for="self-employed"><input style="margin-right: 5px;" id="self-employed" type="checkbox" value="I am self-employed" />I am self-employed</label></p>
 								</li>
@@ -188,9 +261,10 @@
 									<label for="company-coldRegistrationForm">* Company:</label>
 									<div class="fieldgroup">
 										<span id="company-coldRegistrationForm-error" class="error"></span>
-										<input id="company-coldRegistrationForm" type="text" value="" name="text" />
+										<input id="company-coldRegistrationForm" type="text" value="" name="company" />
 									</div>
 								</li>
+							</div>
 							</ul>
 							<p class="actions">
 								<a href="<?php echo base_url('index.php/signup/signup/process3');?>"><button id="btn-submit" class="btn-tertiary" >

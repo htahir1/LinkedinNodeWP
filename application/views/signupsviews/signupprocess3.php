@@ -41,7 +41,7 @@
 															<span class="system-error">
 																<span id="email-nWMIForm-error" class="error"></span>
 															</span>
-															<input id="email-nWMIForm" class="" type="email" data-ime-mode-disabled="" autocomplete="off" value="abcasdasddef@live.com" name="email" />
+															<input id="email-nWMIForm" class="" type="email" data-ime-mode-disabled="" autocomplete="off" value="<?php echo $username; ?>" name="email" />
 															<span id="wmi_progress"></span>
 															<span id="zeppelin-loading" role="presentation"></span>
 														</div>

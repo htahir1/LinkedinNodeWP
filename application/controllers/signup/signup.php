@@ -59,13 +59,22 @@ $this->load->view('signupsviews/signupprocess2.php');
 
 public function process3(){
 
+	$this->load->helper('url');
+$this->load->model('signup_model');
+$this->signup_model->processp1();
+	
+$data['username']=$this->session->userdata('username');
 $this->load->view('common/header2.php');
-$this->load->view('signupsviews/signupprocess3.php');
+$this->load->view('signupsviews/signupprocess3.php',$data);
 
 
 }
 
+
 public function process4(){
+
+
+	
 	$this->load->view('common/header2.php');
 	$this->load->view('signupsviews/signupprocess7.php');
 
@@ -100,6 +109,22 @@ public function process7(){
 
 
 }
+public function processp1(){
+
+
+
+
+
+}
+public function processpp(){
+	
+
+
+
+
+}
+
+
 
 
 }

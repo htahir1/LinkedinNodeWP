@@ -3559,14 +3559,179 @@ p.check-textarea-message {
 
 
 
+.account-sub-nav {
+    height: 0;
+    line-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    right: -5px;
+    top: 100%;
+}
 
 
+.nav-item:hover .account-sub-nav, .nav-item.open .account-sub-nav {
+    height: auto;
+    line-height: 1;
+    opacity: 1;
+    overflow: visible;
+}
+.global-header .utilities .activity-drop, .global-header .utilities .add-connections-options, .global-header .utilities .account-sub-nav-options {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 5px solid #333333;
+    z-index: 10006;
+}
+
+.nav-v5-2-header .utilities .account-sub-nav-options {
+    border: 5px solid #2F2F2F;
+    width: 318px;
+}
+.global-header .utilities .account-sub-nav-header, .global-header .utilities .add-connections-options-header, .global-header .utilities .activity-drop-header {
+    background: none repeat scroll 0 0 #333333;
+    line-height: 13px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.nav-v5-2-header .utilities .account-sub-nav-header, .nav-v5-2-header .utilities .add-connections-options-header, .nav-v5-2-header .utilities .activity-drop-header {
+    background: none repeat scroll 0 0 #2F2F2F;
+}
+
+.global-header .utilities .account-sub-nav-header h3, .global-header .utilities .add-connections-options-header h3, .global-header .utilities .activity-drop-header h3 {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-bottom: 0;
+}
+
+.global-header .utilities .sub-nav-header-arrow {
+    background: url("images/sprite_global_nav_v8.png") no-repeat scroll -10px -868px rgba(0, 0, 0, 0);
+    height: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: absolute;
+    width: 8px;
+}
+
+.account-settings {
+    overflow: hidden;
+    position: relative;
+    width: 318px;
+}
+
+.account-settings > li {
+    display: table;
+    float: left;
+}
+
+.account-settings-link {
+    border-bottom: 1px solid #DCDDDE;
+    display: block;
+    min-height: 34px;
+}
+
+.act-set-row {
+    display: table-cell;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    vertical-align: middle;
+    width: 328px;
+}
+
+.act-set-icon {
+    display: table-cell;
+    height: 24px;
+    vertical-align: middle;
+    width: 40px;
+}
+.act-set-icon-image {
+    background-image: url("images/sprite_global_nav_v8.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 20px;
+    width: 32px;
+}
+
+.self .act-set-icon-image {
+    background-image: none;
+}
 
 
+.account-settings .self .profile-photo {
+    margin-left: 10px;
+}
+.act-set-name {
+    color: #333333;
+    display: table-cell;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 17px;
+    vertical-align: middle;
+    width: 180px;
+}
+.utilities .account-sub-nav-options .act-set-name-split-link, .utilities .account-sub-nav-options .act-set-name {
+    color: #333333;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 17px;
+}
+.act-set-name-split-link {
+    display: block;
+    width: 100%;
+}
 
+.act-set-action {
+    color: #0077B5;
+    display: table-cell;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 88px;
+}
+.utilities .account-sub-nav-options .act-set-name-split-link, .utilities .account-sub-nav-options .act-set-name {
+    color: #333333;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 17px;
+}
 
+.account-settings > li {
+    display: table;
+    float: left;
+}
+.account-settings-link {
+    border-bottom: 1px solid #DCDDDE;
+    display: block;
+    min-height: 34px;
+}
+.act-set-row {
+    display: table-cell;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    vertical-align: middle;
+    width: 328px;
+}
+.act-set-icon {
+    display: table-cell;
+    height: 24px;
+    vertical-align: middle;
+    width: 40px;
+}
+.act-set-icon-image {
+    background-image: url("images/sprite_global_nav_v8.png");
+    background-repeat: no-repeat;
+    display: block;
+    height: 20px;
+    width: 32px;
+}
 
-
+.account-type .act-set-icon-image, .team-account .act-set-icon-image {
+    background-position: 5px -407px;
+}
+.account-settings li:hover {
+	background: #eee;
+}
 
 
 

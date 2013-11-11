@@ -28,7 +28,7 @@
 				<h2 class="logo-container">
 					<a id="in-logo" class="logo" href="#"> LinkedIn </a>
 				</h2>
-				<form id="global-search" class="global-search voltron voltron-vertical-selector">
+				<form action="<?php echo base_url();?>index.php/Search/search/search_keyword" method="post" name="process" id="global-search" class="global-search voltron voltron-vertical-selector">
 					<fieldset>
 						<legend>Find People, Jobs, Companies, and More</legend>
 						<div id="control_gen_2" class="search-scope global-nav-styled-dropdown">
@@ -77,7 +77,49 @@
 					<li class="nav-item activity-tab"><a class="activity-toggle inbox-alert" href="">Inbox</a></li>
 					<li class="nav-item activity-tab"><a class="activity-toggle notifications-alert" href="">Notifications</a></li>
 					<li class="nav-item activity-tab"><a class="activity-toggle add-connections-btn" href="">Add Connections</a></li>
-					<li class="nav-item account-settings-tab"><a class="account-toggle" href="<?php  echo base_url();?>index.php/search/upload_picture"><img src="<?php echo base_url(); echo $pic_url; ?>" width="20" height="20" /></a></li>
+					<!--<li class="nav-item account-settings-tab"><a class="account-toggle" href="<?php echo base_url();?>index.php/search/upload_picture"><img src="<?php echo base_url(); echo $pic_url; ?>" width="20" height="20" /></a></li> -->
+					<li class="nav-item account-settings-tab">
+						<a class="account-toggle" href="<?php echo base_url();?>index.php/search/upload_picture">
+							<img src="<?php echo base_url(); echo $pic_url; ?>" width="20" height="20" />
+						</a>
+						<div id="account-sub-nav" class="account-sub-nav">
+							<div class="account-sub-nav-options">
+								<div class="account-sub-nav-header">
+									<h3>Account &amp; Settings <span class="sub-nav-header-arrow" role="presentation"></span></h3>
+								</div>
+								<div class="account-sub-nav-body">
+									<ul class="account-settings">
+										<li class="self">
+											<div class="account-settings-link">
+												<span class="act-set-row">
+													<span class="act-set-icon">
+														<a href="<?php echo base_url();?>index.php/login/login/do_logout "><span class="act-set-icon-image" role="presentation">
+															<img class="img-defer profile-photo" width="20" height="20" src="<?php echo base_url(); echo $pic_url; ?>" />
+														</span></a>
+													</span>
+													<span class="act-set-name">
+														<a class="act-set-name-split-link" href="<?php echo base_url();?>index.php/login/login/do_logout">Asad Ullah</a>
+													</span>
+													<span class="act-set-action">
+														<a class="account-submenu-split-link" href="<?php echo base_url();?>index.php/login/login/do_logout">Sign Out</a>
+													</span>
+												</span>
+											</div>
+										</li>
+										<li class="account-type">
+											<a class="account-settings-link">
+												<span class="act-set-row">
+													<span class="act-set-icon"><span class="act-set-icon-image"></span></span>
+													<span class="act-set-name">Account: Basic</span>
+													<span class="act-set-action">Upgrade</span>
+												</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>					
 				</ul>
 			</div>
 		</div>
@@ -96,7 +138,7 @@
 					<ul id="profile-sub-nav" class="sub-nav">
 						<li><a href="">Contacts</a></li>
 						<li><a href="">Add Connections</a></li>
-						<li><a href="<?php  echo base_url();?>index.php/search/search/findAlumnai">Find Alumni</a></li>
+						<li><a href="<?php echo base_url();?>index.php/search/search/findAlumnai">Find Alumni</a></li>
 					</ul>
 				</li>
 				<li class="nav-item"><a href="" class="nav-link">Jobs</a></li>
@@ -159,7 +201,7 @@
 							<button class="text-button close-advs show_hide">Close</button>
 						</div>
 						<div id="advs-form-container">
-							<form id="peopleSearchForm" method="" action="" name="peopleSearchForm">
+							<form action="<?php echo base_url();?>index.php/Search/search/search_keyword" method="post" name="process" id="peopleSearchForm" method="" action="" name="peopleSearchForm">
 								<fieldset class="text-input-fields">
 									<ol>
 										<li class="keywords">
@@ -267,13 +309,17 @@
 						</div>
 					</div>
 					<div id="results-container">
+					<form action="<?php echo base_url();?>index.php/Search/search/redirecttoconfirm" method="post" name="process" id="add-friend">
 						<ol id="results" class="search-results">
+							<?php if($list != NULL) { ?>
+							<?php foreach ($list as $item):?>
+							<?php if ($item->userid!=$this->session->userdata('userid')){ ?>
 							<li class="mod result people">
 								<a href=""><img class="entity-img" width="60" height="60" src="images/ghost_person_60x60_v1.png" /></a>
 								<div class="bd">
 									<h3>
-										<a class="title">John Doe</a>
-										<span class="badges"><span><abbr class="degree-icon " title="John Doe is your connection">1<sup>st</sup></abbr></span></span>
+										<a class="title"><?php echo $item->fname.' '.$item->lname ?></a>
+										<span class="badges"><span><abbr class="degree-icon " title="<?php echo $item->fname.' '.$item->lname ?> is your connection">1<sup>st</sup></abbr></span></span>
 									</h3>
 									<p class="description">Assistant Professor at New University</p>
 									<dl class="demographic">
@@ -290,9 +336,9 @@
 										</ul>
 									</div>
 									<div class="srp-actions blue-button">
-										<div class="primary-action-button">
-											<a href="" class="primary-action label">Message</a>
-										</div>
+										
+									<button class="primary-action-button" title="Invite <?php echo $item->fname ?> to connect" type="submit" value="<?php echo $item->userid ?>" name="addignore">Add Connection</button>
+										
 										<div class="secondary-actions-trigger">
 											<a class="trigger" role="button" href="">
 												<span>Secondary Actions</span>
@@ -306,45 +352,10 @@
 									</div>
 								</div>
 							</li>
-							<li class="mod result people">
-								<a href=""><img class="entity-img" width="60" height="60" src="images/ghost_person_60x60_v1.png" /></a>
-								<div class="bd">
-									<h3>
-										<a class="title">John Doe</a>
-										<span class="badges"><span><abbr class="degree-icon " title="John Doe is your connection">1<sup>st</sup></abbr></span></span>
-									</h3>
-									<p class="description">Assistant Professor at New University</p>
-									<dl class="demographic">
-										<dt>Location</dt>
-										<dd>Pakistan</dd>
-										<dt>Industry</dt>
-										<dd class="separator">Education Management</dd>
-									</dl>
-									<div class="social-wrapper collapsed">
-										<ul class="social-line">
-											<li class="shared-conn"><a href="" class="shared-conn-expando"><strong>3</strong>shared connections</a></li>
-											<li class="similar"><a href="">Similar</a></li>
-											<li class="conn-count"><a href=""><strong>12</strong></a></li>
-										</ul>
-									</div>
-									<div class="srp-actions blue-button">
-										<div class="primary-action-button">
-											<a href="" class="primary-action label">Message</a>
-										</div>
-										<div class="secondary-actions-trigger">
-											<a class="trigger" role="button" href="">
-												<span>Secondary Actions</span>
-											</a>
-											<ul class="menu">
-												<li><a href="">View Connections</a></li>
-												<li><a href="">Share</a></li>
-												<li><a href="">Find References</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</li>
+						<?php } ?>
+						<?php endforeach; }?>
 						</ol>
+					</form>
 					</div>
 				</div>
 			</div>

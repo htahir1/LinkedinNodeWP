@@ -6,6 +6,16 @@ class Login_model extends CI_Model{
 	function __construct(){
 		parent::__construct();
 	}
+	public function upload_photo($photo){
+
+
+$id=$this->session->userdata('userid');
+$this->db->where('userid',$id);
+
+  $this->db->set('profileUrl',$photo);
+
+
+	}
 	
 	public function validate($usr=NULL,$pass=NULL){
 		// grab user input

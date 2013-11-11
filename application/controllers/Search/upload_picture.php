@@ -21,21 +21,15 @@ class upload_picture extends CI_Controller{
 		if($this->session->userdata('username')){
 
 
-				$id=$this->session->userdata('username');
-				$data='uploads/'.$id.'.jpg';
-				if(!file_exists($data)){
-					$data='ulploads/default.jpg';
+		$this->load->model('signup_model');
+		// Validate the user can login
+		$id = $this->signup_model->getProfileImage();
+		if($id==""){
 
-
-
-				}
-
-
-
-
-
-
-			$this->load->view('common/header');
+			$id='default';
+		}
+				$data["pic_url"]='uploads/'.$id.'.jpg';
+				$this->load->view('common/header');
 			$this->load->view('search/upload_picture.php',$data);
 		}else{
 			$data['msg'] = $msg;
@@ -50,11 +44,10 @@ class upload_picture extends CI_Controller{
 
 	public function uploader(){
 
-
 $max_file_size = 1024*1024; // 200kb
 $valid_exts = array('jpeg', 'jpg', 'png', 'gif');
 // thumbnail sizes
-$sizes = array(30 => 30);
+$sizes = array(30 => 30,100 => 100);
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' AND isset($_FILES['image'])) {
@@ -63,6 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' AND isset($_FILES['image'])) {
 		$ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
 		if (in_array($ext, $valid_exts)) {
 			$_FILES['image']['name']=$this->session->userdata('userid').'.jpg';
+			$this->load->model('signup_model');
+			$this->signup_model->uploader1();
 			foreach ($sizes as $w => $h) {
 				$files[] = resize($w, $h);
 			
@@ -81,6 +76,10 @@ else{
 echo "not success";
 
 }
+
+
+
+
 
 
 

@@ -1,30 +1,8 @@
-﻿
-<title>Upload Webmail Contacts | LinkedIn</title>
+<title>Upload Profile Picture | LinkedIn</title>
 <link rel="shortcut icon" href="images/favicon.ico" />
 </head>
 
 <body id="join">
-
-<div class="popup-wrapper">
-	<div class="popup">
-		<div class="popup-content">
-			<div class="popup-title">
-				<h3>Skip seeing who you already know?</h3>
-			</div>
-			<div class="popup-body">
-				<div>
-					<div class="alert">
-						<p> If you skip this step, you'll miss out on easily finding people you know on LinkedIn. </p>
-					</div>
-					<p class="actions">
-						<a href="<?php echo base_url('index.php/signup/signup/process5');?>"><button >Find Now</button></a>
-						<a href="<?php echo base_url('index.php/signup/signup/process6');?>"><button >Skip</button></a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 	<div class="top-menu">
 		<div class="wrapper">
 			<a class="logo-black">LinkedIn</a>
@@ -34,11 +12,11 @@
 		<div id="body-area" class="lessmargin">
 			<div class="main-body-white signup">
 				<div class="progress-container">
-					<h1 class="mainh1"> Grow your network on LinkedIn </h1>
+					<h1 class="mainh1">Upload your profile picture</h1>
 					<p class="progress">
-						<span class="summary">Step <strong>2</strong> of <strong>8</strong></span>
-						<span class="progress-meter" title="25% Complete">
-						<span class="has-progress" style="width:25%"></span>
+						<span class="summary">Step <strong>3</strong> of <strong>8</strong></span>
+						<span class="progress-meter" title="37.5% Complete">
+						<span class="has-progress" style="width:37.5%"></span>
 						</span>
 					</p>			
 				</div>
@@ -51,19 +29,20 @@
 									<h3></h3>
 								</div>
 								<div class="content">
-									<p class="introduction"> Get started by adding your email address. </p>
-									<form id="address-book-import-form" class="standard-form sided noborder" >
+									<p class="introduction"> Upload your picture for your profile using the form below. </p>
+									<form id="address-book-import-form" class="standard-form sided noborder" method="POST" action="<?php echo base_url('index.php/signup/singup/processpp');?>" enctype="multipart/form-data">
 										<fieldset class="authenticate">
 											<ul>
 												<li class="email-address">
-													<label id="label-abook-imprt-email" for="email-nWMIForm">Your email:</label>
+													<label id="label-abook-imprt-email" for="email-nWMIForm">Your picture:</label>
 													<div class="fieldgroup">
 														<div class="form-row">
 															<span class="system-error">
 																<span id="email-nWMIForm-error" class="error"></span>
 															</span>
-															<input id="email-nWMIForm" class="" type="email" data-ime-mode-disabled="" autocomplete="off" value="<?php echo $username ?>" name="email" />
-															<span id="wmi_progress"></span>
+															<input type="file" name="image" accept="image/*" />
+															<!--<input id="email-nWMIForm"  type="file"  name="image"  accept="image/*" />
+															--><span id="wmi_progress"></span>
 															<span id="zeppelin-loading" role="presentation"></span>
 														</div>
 													</div>
@@ -72,16 +51,16 @@
 											
 											<p class="add-connections">
 												<span>
-													<input id="resolve-btn" class="btn-primary" type="submit" value="Continue" name="" style="width: auto;" />
+													<input id="resolve-btn" class="btn-primary" type="submit" value="Upload" name="" style="width: auto;" />
 												</span>
 											</p>
-											<p class="note"> We will not store your password or email anyone without your permission. </p>
+											<!-- <p class="note"> We will not store your password or email anyone without your permission. </p> -->
 										</fieldset>
 									</form>
 								</div>						
 							</div>
 							<p class="skip">
-								<a id="skipButton" href="<?php echo base_url('index.php/signup/signup/process6');?>"> Skip this step </a>»
+								<a id="skipButton" href="javascript:void(0)"> Skip this step </a>»
 							</p>								
 							
 						</div>
