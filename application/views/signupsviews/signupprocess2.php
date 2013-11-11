@@ -90,7 +90,7 @@ else if(s=="Student"){
 				<div id="content">
 				 
 					<div class="register-container">
-						<form id="yui-gen2" class="standard-form sided extrainput" action="<?php echo base_url('index.php/signup/signup/process3');?>">
+						<form id="yui-gen2" class="standard-form sided extrainput" action="<?php echo base_url('index.php/signup/signup/imagePage');?>">
 							<ul>
 								<li class="name">
 									<label for="country-coldRegistrationForm">* Country:</label>

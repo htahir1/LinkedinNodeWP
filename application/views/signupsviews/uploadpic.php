@@ -30,7 +30,7 @@
 								</div>
 								<div class="content">
 									<p class="introduction"> Upload your picture for your profile using the form below. </p>
-									<form id="address-book-import-form" class="standard-form sided noborder" method="POST" action="<?php echo base_url('index.php/signup/singup/processpp');?>" enctype="multipart/form-data">
+									<form id="address-book-import-form" class="standard-form sided noborder" method="POST" action="<?php echo base_url('index.php/signup/signup/processpp');?>" enctype="multipart/form-data">
 										<fieldset class="authenticate">
 											<ul>
 												<li class="email-address">
