@@ -6,7 +6,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <!-- Le styles -->
     
-    <?php// echo link_css('bootstrap'); ?>
+   
     <?php echo link_css('style') ?>
 <link href="<?php echo base_url(); ?>assets/css/style.css" >
 <link href="<?php echo base_url(); ?>assets/css/inside-linkedin.css" rel="stylesheet" type="text/css" />
@@ -46,7 +46,7 @@ u[o]&&(delete u[o],c?delete n[l]:typeof n.removeAttribute!==i?n.removeAttribute(
 
 
 
-    <?php// echo link_css('bootstrap-responsive') ?>
+    
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
